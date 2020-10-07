@@ -33,3 +33,14 @@ Or use code locally using:
 cd "Directory of your preference"
 git clone https://github.com/Suspir0n/SelectCar.git
 ```
+## Features
+
+The project can be used as a model to start the development of a desktop or web system. It also demonstrates in a practical way how to create a CRUD with MySQL, how to use JSP, JSF, HTML, CSS among others.
+
+## Configuration
+
+Para executar o projeto, é necessário utilizar o NetBeans ou um IDE de sua preferência, de forma que identifique as dependências necessárias para execução no repositório. Uma vez importado o projeto, será possível testar sua funcionalidade em tempo real.
+
+## Contributions
+
+Contributions are always welcome! I hope that it will help someone!
