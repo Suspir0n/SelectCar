@@ -1,10 +1,10 @@
 <p align="center">
   <a href="http://ant.design">
-    <img width="300" src="./SelectCar 2.0/resources/background_3.png">
+    <img width="600" src="./SelectCar 2.0/resources/background_3.png">
   </a>
 </p>
 
-<h1 align="center"> Project Java, a desktop system and orther a WebSystem!</h1>
+<h1 align="center"> Java Project, a desktop system and orther a WebSystem!</h1>
 
 ## Description 
 
