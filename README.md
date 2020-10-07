@@ -8,4 +8,4 @@
 
 ## Description 
 
-This project illustrates two system, a to Desktop and orther in Web. The object of project is create a system of classic car rent.
+This project illustrates two system, a to Desktop and orther to Web. The object of project is create a system of classic car rent.
