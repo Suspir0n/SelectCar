@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://ant.design">
-    <img width="300" src="./../SelectCar 2.0/resources/background_3.png">
+    <img width="300" src="./SelectCar 2.0/resources/background_3.png">
   </a>
 </p>
 
