@@ -12,8 +12,7 @@ This project illustrates two system, a to Desktop and orther to Web. The object 
 
 ## Demostration of two system
 
-![prototype-001](./prototype-001.png) 
-![prototype-002](./prototype-002.png)
+<img width="400" src="./prototype-001.jpg">
 
 ## Starting
 
