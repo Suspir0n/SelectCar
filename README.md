@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center"> Java Project, a desktop system and orther a WebSystem!</h1>
+<h1 align="center"> Java Project, one desktop system and the other a web system!</h1>
 
 ## Description 
 
