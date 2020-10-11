@@ -1,14 +1,73 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Facelet Title</title>
+      xmlns:h="http://xmlns.jcp.org/jsf/html" lang="pt-br"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+     <h:head>
+        <!-- TITLE -->
+        <title>SysCar</title>
+        <!-- METAS -->
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Uma forma de voltar ao passado."/>
+        <meta name="author" content="CODEBUILD"/>
+        <!-- ICONS -->
+        <link rel="icon" type="image/png" href="resources/icons/favicon.png"/>
+        <!-- CSS -->
+        <link rel="stylesheet" href="./bootstrap/css/style.css"/>
+        <!-- FONTS -->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Página de boas-vindas do Primefaces" />
+        <div class="container">
+            <div class="container-sign-in">
+                <div class="wrap-sign-in">
+                    <div class="sign-in-pic">
+                        <img src="resources/image/logo.png" alt="IMG"/>
+                    </div>
+                    <form class="form-sign-in">
+                        <span class="form-title">
+                            Acesse sua conta
+                        </span>
+                        <div class="wrap-input">
+                            <input class="input100" type="text" name="email" placeholder="Email"/>
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </span>
+                        </div>
+
+                        <div class="wrap-input">
+                            <input class="input100" type="password" name="pass" placeholder="Password"/>
+                                <span class="focus-input100"></span>
+                                <span class="symbol-input100">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                </span>
+                        </div>
+
+                        <div class="container-sign-in-form-btn">
+                            <h:commandButton class="sign-in-form-btn" value="Entrar" action="#"/>
+                        </div>
+
+                        <div class="text-center p-t-12">
+                            <span class="txt1">
+                                Forgot
+                            </span>
+                            <a class="txt2" href="#">
+                                Username / Password?
+                            </a>
+                        </div>
+
+                        <div class="text-center p-t-136">
+                            <a class="txt2" href="#">
+                                Create your Account
+                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </h:body>
 </html>
+
 

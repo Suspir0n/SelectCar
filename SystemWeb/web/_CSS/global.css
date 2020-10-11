@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08/10/2020, 21:47:17
+    Author     : Suspir0n
+*/
+html,
+body,
+.container {
+  min-height: 100%;
+}
+body{
+    background-color: #1C1C1C;
+}
+.container{
+    display: grid;
+    background-color: #363636;
+    order: 2;
+    grid-template: 2fr 1fr / 0fr 3fr; 
+}
+.menu{
+    border: 0px !important;
+    padding: 0px !important;
+    background: none !important;
+    background-color: #4F4F4F;
+}
+.navBar{
+    border: 0px !important;
+    padding: 0px !important;
+    background: none !important;
+    background-color: #4F4F4F;
+    display: flex;
+    justify-content: flex-end;
+}
