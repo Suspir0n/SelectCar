@@ -9,7 +9,7 @@ package com.selectcar.entitys;
  *
  * @author Suspir0n
  */
-public class userEntitys extends baseEntitys{
+public class userEntitys extends baseEntitys {
     // Attributes \\
     private String name;
     private String office;
@@ -17,6 +17,7 @@ public class userEntitys extends baseEntitys{
     private String email;
     private String password;
     private String photo;
+    private int Total;
 
     // Getters and Setters \\
     public String getName() {
@@ -54,5 +55,11 @@ public class userEntitys extends baseEntitys{
     }
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+    public int getTotal() {
+        return Total;
+    }
+    public void setTotal(int Total) {
+        this.Total = Total;
     }
 }

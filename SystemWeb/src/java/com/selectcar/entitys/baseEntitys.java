@@ -5,17 +5,25 @@
  */
 package com.selectcar.entitys;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Suspir0n
  */
 public class baseEntitys {
+   
+
+
     // Attributes \\
     private int uid;
-    private boolean active = true;
-    private boolean deleted = false;
+    private boolean active;
+    private boolean deleted;
     private String createAt;
     private String updateAt;
+    
 
     // Getters and Setters
     public int getUid() {
@@ -24,13 +32,13 @@ public class baseEntitys {
     public void setUid(int uid) {
         this.uid = uid;
     }
-    public boolean isActive() {
+    public boolean getActive() {
         return active;
     }
     public void setActive(boolean active) {
         this.active = active;
     }
-    public boolean isDeleted() {
+    public boolean getDeleted() {
         return deleted;
     }
     public void setDeleted(boolean deleted) {

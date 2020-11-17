@@ -17,10 +17,11 @@ public class carEntitys extends baseEntitys{
     private String model;
     private int ports;
     private String accessories;
-    private String yearModel;
+    private int yearModel;
     private String motor;
-    private String horses;
+    private int horses;
     private String addInformation;
+    private String color;
     private String photo;
     private int total;
     
@@ -61,10 +62,10 @@ public class carEntitys extends baseEntitys{
     public void setAccessories(String accessories) {
         this.accessories = accessories;
     }
-    public String getYearModel() {
+    public int getYearModel() {
         return yearModel;
     }
-    public void setYearModel(String yearModel) {
+    public void setYearModel(int yearModel) {
         this.yearModel = yearModel;
     }
     public String getMotor() {
@@ -73,10 +74,10 @@ public class carEntitys extends baseEntitys{
     public void setMotor(String motor) {
         this.motor = motor;
     }
-    public String getHorses() {
+    public int getHorses() {
         return horses;
     }
-    public void setHorses(String horses) {
+    public void setHorses(int horses) {
         this.horses = horses;
     }
     public String getAddInformation() {
@@ -84,6 +85,12 @@ public class carEntitys extends baseEntitys{
     }
     public void setAddInformation(String addInformation) {
         this.addInformation = addInformation;
+    }
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String color) {
+        this.color = color;
     }
     public String getPhoto() {
         return photo;

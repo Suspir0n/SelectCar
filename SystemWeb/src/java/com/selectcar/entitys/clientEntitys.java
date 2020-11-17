@@ -21,6 +21,7 @@ public class clientEntitys extends baseEntitys{
     private String cpf;
     private String email;
     private String photo;
+    private int total;
 
     // Getters and Setters
     public String getName() {
@@ -83,4 +84,10 @@ public class clientEntitys extends baseEntitys{
     public void setPhoto(String photo) {
         this.photo = photo;
     } 
+    public int getTotal() {
+        return total;
+    }
+    public void setTotal(int total) {
+        this.total = total;
+    }
 }

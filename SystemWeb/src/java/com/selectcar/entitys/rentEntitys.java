@@ -19,6 +19,7 @@ public class rentEntitys extends baseEntitys{
     private carEntitys carFK;
     private clientEntitys clientFK;
     private userEntitys userFK;
+    private int total;
 
     // Getters and Setters
     public String getDateRented() {
@@ -33,7 +34,7 @@ public class rentEntitys extends baseEntitys{
     public void setDateDelivery(String dateDelivery) {
         this.dateDelivery = dateDelivery;
     }
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
     public void setStatus(boolean status) {
@@ -68,5 +69,11 @@ public class rentEntitys extends baseEntitys{
     }
     public void setUserFK(userEntitys userFK) {
         this.userFK = userFK;
+    }  
+    public int getTotal() {
+        return total;
+    }
+    public void setTotal(int total) {
+        this.total = total;
     }
 }

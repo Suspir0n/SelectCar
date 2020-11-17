@@ -59,7 +59,7 @@ public class Faturamento extends javax.swing.JInternalFrame {
                 rs.getString(2),
                 rs.getString(3),
                 valor = rs.getFloat(4),
-                total += valor
+                total += valor 
             });
             txtTotal.setText(String.valueOf(total));
         }

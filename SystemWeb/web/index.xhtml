@@ -2,8 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html" lang="pt-br"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-     <h:head>
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
         <!-- TITLE -->
         <title>SysCar</title>
         <!-- METAS -->
@@ -22,30 +24,34 @@
             <div class="container-sign-in">
                 <div class="wrap-sign-in">
                     <div class="sign-in-pic">
-                        <img src="resources/image/logo.png" alt="IMG"/>
+                        <img src="resources/image/logo.svg" alt="IMG"/>
                     </div>
-                    <form class="form-sign-in">
+                    <h:form class="form-sign-in">
                         <span class="form-title">
                             Acesse sua conta
                         </span>
                         <div class="wrap-input">
-                            <input class="input100" type="text" name="email" placeholder="Email"/>
-                                <span class="focus-input100"></span>
-                                <span class="symbol-input100">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                </span>
+                            <h:inputText id="login" class="input100" value="#{userBean.userEntitys.login}">
+                                <f:passThroughAttribute name="login" value="ex: Paulo ou paulo@gmail.com"/>
+                            </h:inputText>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
                         </div>
 
                         <div class="wrap-input">
-                            <input class="input100" type="password" name="pass" placeholder="Password"/>
-                                <span class="focus-input100"></span>
-                                <span class="symbol-input100">
-                                    <i class="fa fa-lock" aria-hidden="true"></i>
-                                </span>
+                            <h:inputSecret id="password" class="input100" value="#{userBean.userEntitys.password}">
+                                <f:passThroughAttribute name="placeholder" value="ex: 12345"/>
+                            </h:inputSecret>
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
                         </div>
 
                         <div class="container-sign-in-form-btn">
-                            <h:commandButton class="sign-in-form-btn" value="Entrar" action="#"/>
+                            <p:commandButton class="sign-in-form-btn" type="submit" value="Entrar" action="#{userBean.authenticate()}"/>
                         </div>
 
                         <div class="text-center p-t-12">
@@ -56,14 +62,7 @@
                                 Username / Password?
                             </a>
                         </div>
-
-                        <div class="text-center p-t-136">
-                            <a class="txt2" href="#">
-                                Create your Account
-                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </form>
+                    </h:form>
                 </div>
             </div>
         </div>

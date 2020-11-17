@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:pm="http://primefaces.org/mobile"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     <html>
-        <h:head>
+        <head>
             <!-- TITLE -->
             <title>SysCar</title>
             <!-- METAS -->
@@ -20,8 +16,8 @@ and open the template in the editor.
             <meta name="author" content="CODEBUILD"/>
             <!-- LINKS -->
             <ui:include src="../templates/links.xhtml"/>
-        </h:head>
-        <h:body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+        </head>
+        <body class="hold-transition sidebar-mini">
             <div class="wrapper">
                 <!-- Navbar -->
                 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -31,7 +27,7 @@ and open the template in the editor.
                             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
-                            <a href="home.xhtml" class="nav-link">Inicio</a>
+                            <a href="./home.xhtml" class="nav-link">Inicio</a>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
                             <a href="#" class="nav-link">Contato</a>
@@ -148,7 +144,7 @@ and open the template in the editor.
                 <!-- Main Sidebar Container -->
                 <aside class="main-sidebar sidebar-dark-primary elevation-4">
                     <!-- Brand Logo -->
-                    <a href="home.xhtml" class="brand-link">
+                    <a href="./home.xhtml" class="brand-link">
                         <h:graphicImage library="image" name="favicon.svg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"/>
                         <span class="brand-text font-weight-light">SelectCar</span>
                     </a>
@@ -248,210 +244,235 @@ and open the template in the editor.
                         <!-- /.sidebar-menu -->
                     </div>
                     <!-- /.sidebar -->
-                </aside>
-                <!-- Content Wrapper. Contains page content -->
+                </aside><!-- Content Wrapper. Contains page content -->
                 <div class="content-wrapper">
                     <!-- Content Header (Page header) -->
-                    <div class="content-header">
+                    <section class="content-header">
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h1 class="m-0 text-dark">Bem-Vindo!</h1>
-                                </div><!-- /.col -->
+                                    <h1>Alugando veiculos</h1>
+                                </div>
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
                                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
+                                        <li class="breadcrumb-item active">Agendamento</li>
                                     </ol>
-                                </div><!-- /.col -->
-                            </div><!-- /.row -->
+                                </div>
+                            </div>
                         </div><!-- /.container-fluid -->
-                    </div>
-                    <!-- /.content-header -->
+                    </section>
 
                     <!-- Main content -->
                     <section class="content">
                         <div class="container-fluid">
-                            <!-- Info boxes -->
-                            <div class="row">
-                                <div class="col-12 col-sm-6 col-md-3">
-                                    <div class="info-box">
-                                        <h:graphicImage library="image" name="favicon_car_03.svg"/>
+                            <!-- SELECT2 EXAMPLE -->
+                            <div class="card card-default">
+                                <!-- /.card-header -->
+                                <!-- /.card-header -->
+                                <div class="card-header">
+                                    <div class="card-tools">
+                                        <div class="input-group input-group-sm" style="width: 200px;">
+                                            <h:inputText id="code" class="form-control float-right" value="#{rentBean.id}">
+                                                <f:passThroughAttribute name="placeholder" value="codigo"/>
+                                            </h:inputText>
 
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">Total de Veiculos</span>
-                                            <span class="info-box-number">
-                                                <h:outputText value="#{carBean.carEntitys.total}" style="font-weight: bold"/>  
-                                            </span>
+                                            <div class="input-group-append">
+                                                <p:commandButton value="Consultar" class="btn btn-default" action="#{rentBean.search()}"/>
+                                            </div>
                                         </div>
-                                        <!-- /.info-box-content -->
                                     </div>
-                                    <!-- /.info-box -->
                                 </div>
-                                <!-- /.col -->
-                                <div class="col-12 col-sm-6 col-md-3">
-                                    <div class="info-box mb-3">
-                                        <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Data do Aluguel</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                    </div>
+                                                    <h:inputText id="dateRented" class="form-control" value="#{rentBean.rentEntitys.dateRented}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 2020-10-27"/>
+                                                    </h:inputText>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <!-- /.form group -->
 
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">Total de Funcionarios</span>
-                                            <span class="info-box-number"><h:outputText value="#{userBean.userEntitys.total}" style="font-weight: bold"/></span>
+                                            <div class="form-group">
+                                                <label>Data de Entrega</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                    </div>
+                                                    <h:inputText id="dateDelivery" class="form-control" value="#{rentBean.rentEntitys.dateDelivery}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 2020-10-28"/>
+                                                    </h:inputText>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <!-- /.form group -->
+
+                                            <!-- phone mask -->
+                                            <div class="form-group">
+                                                <label>Status</label>
+
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <img class="input-group-text" src="../resources/icons/status.svg" />
+                                                    </div>
+                                                    <h:inputText id="status" class="form-control" value="#{rentBean.rentEntitys.status}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 1 ou 0"/>
+                                                    </h:inputText>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <!-- /.form group -->
+
+                                            <div class="form-group">
+                                                <label>Descrição</label>
+
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <img class="input-group-text" src="../resources/icons/description.svg" />
+                                                    </div>
+                                                    <h:inputText id="description" class="form-control" value="#{rentBean.rentEntitys.description}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: O carro está em otimo estado"/>
+                                                    </h:inputText>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label>Valor</label>
+
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <img class="input-group-text" src="../resources/icons/value.svg" />
+                                                    </div>
+                                                    <h:inputText id="valuePaid" class="form-control" value="#{rentBean.rentEntitys.valuePaid}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 250.50"/>
+                                                    </h:inputText>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+
+                                            <!-- /.form-group -->
+                                            <p:commandButton value="Salvar" class="btn btn-default" action="#{rentBean.save()}"/>
                                         </div>
-                                        <!-- /.info-box-content -->
-                                    </div>
-                                    <!-- /.info-box -->
-                                </div>
-                                <!-- /.col -->
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>CPF do Cliente</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                         <img class="input-group-text" src="../resources/icons/lock-icon.svg" />
+                                                    </div>
+                                                    <h:inputText id="clientFK" class="form-control" value="#{rentBean.rentEntitys.clientFK}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 999.999.999-99"/>
+                                                    </h:inputText>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <!-- /.form group -->
 
-                                <!-- fix for small devices only -->
-                                <div class="clearfix hidden-md-up"></div>
+                                            <div class="form-group">
+                                                <label>Placa do Veiculo</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <img class="input-group-text" src="../resources/icons/placa-icon.svg" />
+                                                    </div>
+                                                    <h:inputText id="carFK" class="form-control" value="#{rentBean.rentEntitys.carFK}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: AAA-9999"/>
+                                                    </h:inputText>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <!-- /.form group -->
 
-                                <div class="col-12 col-sm-6 col-md-3">
-                                    <div class="info-box mb-3">
-                                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+                                            <!-- phone mask -->
+                                            <div class="form-group">
+                                                <label>Nome do Funcionario</label>
 
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">Alugueis Realizados</span>
-                                            <span class="info-box-number"><h:outputText value="#{rentBean.rentEntitys.total}" style="font-weight: bold"/></span>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <img class="input-group-text" src="../resources/icons/profile-icon.svg" />
+                                                    </div>
+                                                    <h:inputText id="cpf" class="form-control" value="#{rentBean.rentEntitys.userFK}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: fulano"/>
+                                                    </h:inputText>
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <!-- /.form group -->
                                         </div>
-                                        <!-- /.info-box-content -->
+                                        <!-- /.col -->
                                     </div>
-                                    <!-- /.info-box -->
+                                    <!-- /.row -->
                                 </div>
-                                <!-- /.col -->
-                                <div class="col-12 col-sm-6 col-md-3">
-                                    <div class="info-box mb-3">
-                                        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">Total de Clientes</span>
-                                            <span class="info-box-number"><h:outputText value="#{clientBean.clientEntitys.total}" style="font-weight: bold"/></span>
-                                        </div>
-                                        <!-- /.info-box-content -->
-                                    </div>
-                                    <!-- /.info-box -->
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    Visite <a href="#">Documentação do SelectCat</a> para mas informações sobre como cadastrar.
                                 </div>
-                                <!-- /.col -->
                             </div>
+                            <!-- /.card -->
                             <!-- /.row -->
-
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-12">
                                     <div class="card">
-                                        <div class="card-header">
-                                            <h5 class="card-title">Relatório de faturamento mensal</h5>
-
-                                            <div class="card-tools">
-                                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                    <i class="fas fa-minus"></i>
-                                                </button>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                                                        <i class="fas fa-wrench"></i>
-                                                    </button>
-                                                </div>
-                                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                            </div>
-                                        </div>
                                         <!-- /.card-header -->
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-8">
-                                                    <p class="text-center">
-                                                        <strong>Vendas: 1 Julho, 2020 - 31 Dezembro, 2020</strong>
-                                                    </p>
+                                        <div class="card-body table-responsive p-0">
+                                            <p:dataTable id="tabela"
+                                                         var="item"
+                                                         value="#{rentBean.rents}"
+                                                         editable="true"
+                                                         class="table table-hover text-nowrap">
 
-                                                    <div class="chart">
-                                                        <!-- Sales Chart Canvas -->
-                                                        <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                                                    </div>
-                                                    <!-- /.chart-responsive -->
-                                                </div>
-                                                <!-- /.col -->
-                                                <div class="col-md-4">
-                                                    <p class="text-center">
-                                                        <strong>Conclusão de metas</strong>
-                                                    </p>
+                                                <p:column headerText="Data do Aluguel">
+                                                    <h:outputText value="#{item.dateRented}"/>
+                                                </p:column>
+                                                <p:column headerText="Data de Entrega">
+                                                    <h:outputText value="#{item.dateDelivery}"/>
+                                                </p:column>
+                                                <p:column headerText="Status">
+                                                    <h:outputText value="#{item.status}"/>
+                                                </p:column>
+                                                <p:column headerText="Descrição">
+                                                    <h:outputText value="#{item.description}"/>
+                                                </p:column>
+                                                <p:column headerText="Valor">
+                                                    <h:outputText value="#{item.valuePaid}"/>
+                                                </p:column>
+                                                <p:column headerText="CPF do Cliente">
+                                                    <h:outputText value="#{item.clientFK.cpf}"/>
+                                                </p:column>
+                                                <p:column headerText="Placa do Veiculo">
+                                                    <h:outputText value="#{item.carFK.placa}"/>
+                                                </p:column>
+                                                <p:column headerText="Nome do Funcionário">
+                                                    <h:outputText value="#{item.userFK.name}"/>
+                                                </p:column>
+                                                <p:column style="width:35px">
+                                                    <p:rowEditor/>
+                                                </p:column>
 
-                                                    <div class="progress-group">
-                                                        Adicionar novos carros
-                                                        <span class="float-right"><h:outputText value="#{carBean.carEntitys.total}" style="font-weight: bold"/>/10</span>
-                                                        <div class="progress progress-sm">
-                                                            <div class="progress-bar bg-primary" style="width: 20%"></div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.progress-group -->
-
-                                                    <div class="progress-group">
-                                                        Alugueis Completados
-                                                        <span class="float-right"><h:outputText value="#{rentBean.rentEntitys.total}" style="font-weight: bold"/>/10</span>
-                                                        <div class="progress progress-sm">
-                                                            <div class="progress-bar bg-danger" style="width: 20%"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- /.col -->
-                                            </div>
-                                            <!-- /.row -->
+                                            </p:dataTable>
                                         </div>
-                                        <!-- ./card-body -->
-                                        <div class="card-footer">
-                                            <div class="row">
-                                                <div class="col-sm-3 col-6">
-                                                    <div class="description-block border-right">
-                                                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 58%</span>
-                                                        <h5 class="description-header">R$ <h:outputText value="#{rentBean.rentEntitys.valuePaid}" style="font-weight: bold"/></h5>
-                                                        <span class="description-text">Rendimento Total</span>
-                                                    </div>
-                                                    <!-- /.description-block -->
-                                                </div>
-                                                <!-- /.col -->
-                                                <div class="col-sm-3 col-6">
-                                                    <div class="description-block border-right">
-                                                        <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                                                        <h5 class="description-header">R$ <h:outputText value="#{rentBean.totalCost}" style="font-weight: bold"/></h5>
-                                                        <span class="description-text">Custo Total</span>
-                                                    </div>
-                                                    <!-- /.description-block -->
-                                                </div>
-                                                <!-- /.col -->
-                                                <div class="col-sm-3 col-6">
-                                                    <div class="description-block border-right">
-                                                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                                                        <h5 class="description-header">R$ <h:outputText value="#{rentBean.totalProfit}" style="font-weight: bold"/></h5>
-                                                        <span class="description-text">Lucro Total</span>
-                                                    </div>
-                                                    <!-- /.description-block -->
-                                                </div>
-                                                <!-- /.col -->
-                                                <div class="col-sm-3 col-6">
-                                                    <div class="description-block">
-                                                        <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                                                        <h5 class="description-header"><h:outputText value="#{rentBean.goals}" style="font-weight: bold"/></h5>
-                                                        <span class="description-text">Metas Atingidas</span>
-                                                    </div>
-                                                    <!-- /.description-block -->
-                                                </div>
-                                            </div>
-                                            <!-- /.row -->
-                                        </div>
-                                        <!-- /.card-footer -->
+                                        <!-- /.card-body -->
                                     </div>
                                     <!-- /.card -->
                                 </div>
-                                <!-- /.col -->
                             </div>
                             <!-- /.row -->
-                        </div><!--/. container-fluid -->
+                        </div><!-- /.container-fluid -->
                     </section>
                     <!-- /.content -->
                 </div>
-                <!-- /.content-wrapper -->
+                <ui:include src="../templates/footer.xhtml"/>
             </div>
-            <ui:include src="../templates/footer.xhtml"/>
             <ui:include src="../templates/scripts.xhtml"/>
-        </h:body>
-    </html> 
+        </body>
+    </html>
 </ui:composition>
+
+

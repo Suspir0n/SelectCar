@@ -5,8 +5,8 @@
  */
 package com.selectcar.bean;
 
-import com.selectcar.DAO.carDAO;
-import com.selectcar.entitys.carEntitys;
+import com.selectcar.DAO.clientDAO;
+import com.selectcar.entitys.clientEntitys;
 import static com.sun.javafx.logging.PulseLogger.addMessage;
 import java.io.Serializable;
 import java.util.List;
@@ -21,38 +21,37 @@ import org.primefaces.context.RequestContext;
  *
  * @author Suspir0n
  */
-@Named(value = "carBean")
+@Named(value = "clientBean")
 @SessionScoped
-public class carBean implements Serializable{
+public class clientBean implements Serializable{
     
-    // Attributes \\
-    carDAO carDAO;
-    List<carEntitys> cars;
-    carEntitys carEntitys;
+     // Attributes \\
+    clientDAO clientDAO;
+    List<clientEntitys> clients;
+    clientEntitys clientEntitys;
     int id;
 
     // Constructor \\
-    public carBean() {
-       
+    public clientBean() {
+        clientDAO = new clientDAO();
     }
     
     // Second Constructor \\
     @PostConstruct
     public void init(){
-        carDAO = new carDAO();
-        carEntitys = new carEntitys();
-        CountsHowManyCars();
+        clientDAO = new clientDAO();
+        clientEntitys = new clientEntitys();  
+        CountsHowManyClients();
         all();
     }
-    
     // Methods \\
     /*
-    * Method of bring all the cars
-    * brings all the cars and put in a table.
+    * Method of bring all the clients
+    * brings all the clients and put in a table.
     */
     public void all(){
         try {
-            cars = carDAO.all();
+            clients = clientDAO.all();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -63,7 +62,7 @@ public class carBean implements Serializable{
     */
     public void search(){
         try {
-            carDAO.search(id);
+            clientDAO.search(id);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -74,38 +73,38 @@ public class carBean implements Serializable{
     */
     public void save(){
         try {
-            carDAO.save(carEntitys);
+            clientDAO.save(clientEntitys);
         } catch (Exception ex) {
             addMessage(ex.getMessage());
         }
         
-        addMessage("Veiculo adicionado com sucesso!");
+        addMessage("Cliente adicionado com sucesso!");
         
-        carEntitys = new carEntitys();
+        clientEntitys = new clientEntitys();
     }
     /*
     * Method of Count
-    * Counts how many cars are registered.
+    * Counts how many clients are registered.
     */
-    public void CountsHowManyCars(){
+    public void CountsHowManyClients(){
         try {
-            carEntitys = carDAO.CountsHowManyCars();
+            clientEntitys = clientDAO.CountsHowManyClients();
         } catch (Exception ex) {
             addMessage(ex.getMessage());
         }
     }
     /*
     * Method of Delete
-    * delete some cars register.
+    * delete some clients register.
     */
-    public void delete(carEntitys carEntitys){
+    public void delete(clientEntitys clientEntitys){
         try {
-            carDAO.delete(carEntitys);
+            clientDAO.delete(clientEntitys);
         } catch (Exception e) {
             addMessage(e.getMessage());
             return;
         }
-        addMessage("veiculo removido com sucesso!");
+        addMessage("Cliente removido com sucesso!");
         
         all();
         updateComponent("form"); // atualizo o form, para dar um refresh no datatable
@@ -121,23 +120,23 @@ public class carBean implements Serializable{
     }
     
     // Getters and Setters \\
-    public carDAO getCarDAO() {
-        return carDAO;
+    public clientDAO getClientDAO() {
+        return clientDAO;
     }
-    public void setCarDAO(carDAO carDAO) {
-        this.carDAO = carDAO;
+    public void setClientDAO(clientDAO clientDAO) {
+        this.clientDAO = clientDAO;
     }
-    public List<carEntitys> getCars() {
-        return cars;
+    public List<clientEntitys> getClients() {
+        return clients;
     }
-    public void setCars(List<carEntitys> cars) {
-        this.cars = cars;
+    public void setClients(List<clientEntitys> clients) {
+        this.clients = clients;
     }
-    public carEntitys getCarEntitys() {
-        return carEntitys;
+    public clientEntitys getClientEntitys() {
+        return clientEntitys;
     }
-    public void setCarEntitys(carEntitys carEntitys) {
-        this.carEntitys = carEntitys;
+    public void setClientEntitys(clientEntitys clientEntitys) {
+        this.clientEntitys = clientEntitys;
     }
     public int getId() {
         return id;

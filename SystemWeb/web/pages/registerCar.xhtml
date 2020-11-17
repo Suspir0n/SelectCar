@@ -3,7 +3,8 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
-                xmlns:pm="http://primefaces.org/mobile">
+                xmlns:pm="http://primefaces.org/mobile"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
     <html>
         <head>
             <!-- TITLE -->
@@ -170,6 +171,14 @@
                                         <p>Dashboard</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="./schedulingRent.xhtml" class="nav-link">
+                                        <i class="nav-icon fas fa-edit"></i>
+                                        <p>
+                                            Agendamento
+                                        </p>
+                                    </a>
+                                </li>
                                 <li class="nav-item has-treeview">
                                     <a href="#" class="nav-link">
                                         <i class="nav-icon fas fa-edit"></i>
@@ -181,51 +190,21 @@
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="../pages/registerCar.xhtml" class="nav-link">
+                                            <a href="./registerCar.xhtml" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Cadastros de carros</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="../pages/registrerClient.xhtml" class="nav-link">
+                                            <a href="./registrerClient.xhtml" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Cadastros de Clientes</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="../pages/registerUser.xhtml" class="nav-link">
+                                            <a href="./registerUser.xhtml" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Cadastros de Usuarios</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon fas fa-chart-pie"></i>
-                                        <p>
-                                            Graficos
-                                            <i class="right fas fa-angle-left"></i>
-                                            <span class="badge badge-info right">3</span>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="pages/charts/chartjs.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Faturamento</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/charts/flot.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Crescimento de Cliente</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/charts/inline.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Crescimento de alugueis</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -240,130 +219,15 @@
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="pages/UI/icons.html" class="nav-link">
+                                            <a href="./revenues.xhtml" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Faturamento</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="./rented.xhtml" class="nav-link">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Alugados</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/UI/buttons.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Aluguel em Aberto</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/UI/sliders.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Alegueis finalizados</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-header">Mais</li>
-                                <li class="nav-item">
-                                    <a href="pages/calendar.html" class="nav-link">
-                                        <i class="nav-icon fas fa-calendar-alt"></i>
-                                        <p>
-                                            Calêndario
-                                            <span class="badge badge-info right">2</span>
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/gallery.html" class="nav-link">
-                                        <i class="nav-icon far fa-image"></i>
-                                        <p>
-                                            Galeria
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/gallery.html" class="nav-link">
-                                        <i class="nav-icon far fa-envelope"></i>
-                                        <p>
-                                            Caixa de Correio
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-                                        <i class="nav-icon far fa-plus-square"></i>
-                                        <p>
-                                            Configurações
-                                            <i class="fas fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview">
-                                        <li class="nav-item">
-                                            <a href="pages/examples/login.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Login</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/register.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Register</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/forgot-password.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Forgot Password</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/recover-password.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Recover Password</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/lockscreen.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Lockscreen</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/legacy-user-menu.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Legacy User Menu</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/language-menu.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Language Menu</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/404.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Error 404</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/500.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Error 500</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/pace.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Pace</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="pages/examples/blank.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Blank Page</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="starter.html" class="nav-link">
-                                                <i class="far fa-circle nav-icon"></i>
-                                                <p>Starter Page</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -405,6 +269,20 @@
                             <!-- SELECT2 EXAMPLE -->
                             <div class="card card-default">
                                 <!-- /.card-header -->
+                                <!-- /.card-header -->
+                                <div class="card-header">
+                                    <div class="card-tools">
+                                        <div class="input-group input-group-sm" style="width: 200px;">
+                                            <h:inputText id="sd" class="form-control float-right" value="#{carBean.id}">
+                                                <f:passThroughAttribute name="placeholder" value="codigo"/>
+                                            </h:inputText>
+
+                                            <div class="input-group-append">
+                                                <p:commandButton value="Consultar" class="btn btn-default" action="#{carBean.search()}"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -412,9 +290,11 @@
                                                 <label>Numero do Chassi</label>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                        <img class="input-group-text" src="../resources/icons/chassis-icon.svg" />
                                                     </div>
-                                                    <h:inputText value="ex: 112 y5M06j yT hV2110" class="form-control" />
+                                                    <h:inputText id="numberChassi" class="form-control" value="#{carBean.carEntitys.numberChassi}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 112 y5M06j yT hV2110"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -424,9 +304,11 @@
                                                 <label>Placa</label>
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                        <img class="input-group-text" src="../resources/icons/placa-icon.svg" />
                                                     </div>
-                                                    <h:inputText value="ex: OGY-9873" class="form-control" />
+                                                    <h:inputText id="placa" class="form-control" value="#{carBean.carEntitys.placa}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: OGY-9873"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -438,9 +320,11 @@
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                        <img class="input-group-text" src="../resources/icons/mark.svg" />
                                                     </div>
-                                                    <h:inputText value="ex: GM - Chevrolet" class="form-control" />
+                                                    <h:inputText id="mark" class="form-control" value="#{carBean.carEntitys.mark}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: GM - Chevrolet"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -452,9 +336,11 @@
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                        <img class="input-group-text" src="../resources/icons/model-icon.svg" />
                                                     </div>
-                                                    <h:inputText value="ex: Omega CD 3.8 V6" class="form-control" />
+                                                    <h:inputText id="model" class="form-control" value="#{carBean.carEntitys.model}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: Omega CD 3.8 V6"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -466,23 +352,29 @@
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-laptop"></i></span>
+                                                        <img class="input-group-text" src="../resources/icons/phone-icon.svg" />
                                                     </div>
-                                                    <h:inputText value="ex: 4" class="form-control" />
+                                                    <h:inputText id="ports" class="form-control" value="#{carBean.carEntitys.ports}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 4"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
+                                            <p:commandButton value="Salvar" class="btn btn-default" action="#{carBean.save()}"/>
                                             <!-- /.form-group -->
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Acessorios</label>
-                                                <select class="form-control select2">
-                                                    <option selected="selected">Cadeira para Bebê</option>
-                                                    <option>Suporte para Bicicleta</option>
-                                                    <option>GPS</option>
-                                                    <option>Televisão</option>
-                                                </select>
+
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <img class="input-group-text" src="../resources/icons/accessories-icon.svg" />
+                                                    </div>
+                                                    <h:inputText id="accessories" class="form-control" value="#{carBean.carEntitys.accessories}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: GPS, WIFI, TV"/>
+                                                    </h:inputText>
+                                                </div>
                                                 <!-- /.input group -->
                                             </div>
                                             <!-- /.form group -->
@@ -493,7 +385,9 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                                     </div>
-                                                    <h:inputText value="ex: 2010" class="form-control" />
+                                                    <h:inputText id="yearModel" class="form-control" value="#{carBean.carEntitys.yearModel}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 2010"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -505,9 +399,11 @@
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                        <img class="input-group-text" src="../resources/icons/motor.svg" />
                                                     </div>
-                                                    <h:inputText value="ex: V8" class="form-control" />
+                                                    <h:inputText id="motor" class="form-control" value="#{carBean.carEntitys.motor}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: V8"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -519,9 +415,11 @@
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                        <img class="input-group-text" src="../resources/icons/horses.svg" />
                                                     </div>
-                                                    <h:inputText value="ex: 400" class="form-control" />
+                                                    <h:inputText id="horses" class="form-control" value="#{carBean.carEntitys.horses}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: 400"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -533,9 +431,11 @@
 
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <span class="input-group-text"><i class="fas fa-laptop"></i></span>
+                                                        <img class="input-group-text" src="../resources/icons/color.svg" />
                                                     </div>
-                                                    <h:inputText value="ex: Preto" class="form-control" />
+                                                    <h:inputText id="color" class="form-control" value="#{carBean.carEntitys.color}">
+                                                        <f:passThroughAttribute name="placeholder" value="ex: Preto"/>
+                                                    </h:inputText>
                                                 </div>
                                                 <!-- /.input group -->
                                             </div>
@@ -551,6 +451,45 @@
                                 </div>
                             </div>
                             <!-- /.card -->
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <!-- /.card-header -->
+                                        <div class="card-body table-responsive p-0">
+                                            
+                                            <p:dataTable id="tabela"
+                                                         var="item"
+                                                         value="#{carBean.cars}"
+                                                         editable="true"
+                                                         class="table table-hover text-nowrap">
+
+                                                <p:column headerText="Placa" style="width:250px">
+                                                    <h:outputText value="#{item.placa}"/>
+                                                </p:column>
+                                                <p:column headerText="Marca" style="width:350px">
+                                                    <h:outputText value="#{item.mark}"/>
+                                                </p:column>
+                                                <p:column headerText="Modelo" style="width:350px">
+                                                    <h:outputText value="#{item.model}"/>
+                                                </p:column>
+                                                <p:column headerText="Ano do Modelo" style="width:150px">
+                                                    <h:outputText value="#{item.yearModel}"/>
+                                                </p:column>
+                                                <p:column headerText="Cor" style="width:150px">
+                                                    <h:outputText value="#{item.cor}"/>
+                                                </p:column>
+                                                <p:column style="width:35px">
+                                                    <p:rowEditor/>
+                                                </p:column>
+                                            </p:dataTable>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+                                    <!-- /.card -->
+                                </div>
+                            </div>
+                            <!-- /.row -->
                         </div><!-- /.container-fluid -->
                     </section>
                     <!-- /.content -->
