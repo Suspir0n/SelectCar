@@ -27,51 +27,51 @@ This document aims to plan, develop and present a system using the resources of 
 
 #### Functionalities
 
-Keep Customer
-Keep Employee
-Keep Rent
-Make Rent Payment
+Keep Customer<br>
+Keep Employee<br>
+Keep Rent<br>
+Make Rent Payment<br>
 Issue monthly invoicing report
 
 #### Requirements - Maintain Customer
 
-RF001 - Include Customer
-RF002 - Consult Customer
-RF003 - Change Client
-RF004 - Delete Customer |
-RF005 - Search Customer |
-RN001 - All mandatory Customer fields must be filled
+RF001 - Include Customer<br>
+RF002 - Consult Customer<br>
+RF003 - Change Client<br>
+RF004 - Delete Customer<br>
+RF005 - Search Customer<br>
+RN001 - All mandatory Customer fields must be filled<br>
 RN002 - It is not allowed to include a customer with the CPF repeated
 
 #### Requirements - Keep Employee
 
-RF006 - Include Employee
-RF007 - Consult Employee
-RF008 - Change Employee
-RF009 - Delete Employee
-RF010 - Search Employee
-RN003 - All mandatory employee fields must be filled
+RF006 - Include Employee<br>
+RF007 - Consult Employee<br>
+RF008 - Change Employee<br>
+RF009 - Delete Employee<br>
+RF010 - Search Employee<br>
+RN003 - All mandatory employee fields must be filled<br>
 RN004 - It is not allowed to include Employee with repeated E-mail
 
 #### Requirements - Maintain Rent
-RF011 - Include Rental
-RF012 - Consult Rent
-RF013 - Change Rental
-RF014 - Exclude Rent
-RF015 - Search Rental
-RN005 - All mandatory Rental fields must be filled
+RF011 - Include Rental<br>
+RF012 - Consult Rent<br>
+RF013 - Change Rental<br>
+RF014 - Exclude Rent<br>
+RF015 - Search Rental<br>
+RN005 - All mandatory Rental fields must be filled<br>
 RN006 - Negative price is not allowed
 
 #### Requirements - Make Rent Payment
-RF014 - Register Payment
-RF015 - Cancel Payment
-RN008 - All mandatory payment fields must be filled
-RN009 - It is not allowed to register Payment with a different amount of debt
-Requirements - monthly invoicing report
+RF014 - Register Payment<br>
+RF015 - Cancel Payment<br>
+RN008 - All mandatory payment fields must be filled<br>
+RN009 - It is not allowed to register Payment with a different amount of debt<br>
+Requirements - monthly invoicing report<br>
 RN010 - It is not allowed to inform an end date less than the start date in the period of issue of the report
 
 #### Non-Functional Requirements
-RNF001 - The Software Development Model adopted by the team was SCRUM
+RNF001 - The Software Development Model adopted by the team was SCRUM<br>
 RNF002 - The interface must be intuitive and user friendly
 
 ## Use Case diagram
