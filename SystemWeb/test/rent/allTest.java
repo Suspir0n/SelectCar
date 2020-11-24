@@ -32,7 +32,7 @@ public class allTest {
 
         try {
             rentEntitys rent = new rentEntitys();
-            System.out.println(instance.all().get(0).getClientFK().getCpf());
+            System.out.println(instance.all().get(0).getCpf());
      
             if (rent == null) {
                 fail("result null !");

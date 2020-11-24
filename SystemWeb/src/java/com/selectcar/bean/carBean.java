@@ -11,18 +11,21 @@ import static com.sun.javafx.logging.PulseLogger.addMessage;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import org.primefaces.context.RequestContext;
+import org.primefaces.event.RowEditEvent;
 
 /**
  *
  * @author Suspir0n
  */
-@Named(value = "carBean")
-@SessionScoped
+@ManagedBean(name = "carBean")
+@RequestScoped
 public class carBean implements Serializable{
     
     // Attributes \\
@@ -81,6 +84,8 @@ public class carBean implements Serializable{
         
         addMessage("Veiculo adicionado com sucesso!");
         
+        all();
+        updateComponent("form");
         carEntitys = new carEntitys();
     }
     /*

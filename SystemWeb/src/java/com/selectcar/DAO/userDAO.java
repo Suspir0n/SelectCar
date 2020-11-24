@@ -38,6 +38,7 @@ public class userDAO {
     public void save(userEntitys user) throws Exception {
         try {
             connect = com.selectcar.database.connection.getConnection(); // obtem a conexão com o BD
+
             base.setSomeAttributesUsers(user);
             // se é uma inserção
             ps = connect.prepareStatement("INSERT INTO user(uid, active, deleted, createAt, updateAt, name, office, login, email, password, photo) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");

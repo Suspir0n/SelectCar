@@ -7,32 +7,39 @@ package com.selectcar.bean;
 
 import com.selectcar.DAO.rentDAO;
 import com.selectcar.entitys.carEntitys;
+import com.selectcar.entitys.clientEntitys;
 import com.selectcar.entitys.rentEntitys;
+import com.selectcar.entitys.userEntitys;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.inject.Named;
 import org.primefaces.context.RequestContext;
+import org.primefaces.event.RowEditEvent;
 
 /**
  *
  * @author Suspir0n
  */
-@Named(value = "rentBean")
-@SessionScoped
+@ManagedBean(name = "rentBean")
+@RequestScoped
 public class rentBean implements Serializable{
     
      // Attributes \\
     rentDAO rentDAO;
     List<rentEntitys> rents;
     rentEntitys rentEntitys;
+    clientEntitys clientEntitys;
+    carEntitys carEntitys;
+    userEntitys userEntitys;
     int id;
     double totalCost;
     double totalProfit;
     int goals;
+    int total;
 
     // Constructor \\
     public rentBean() {
@@ -42,7 +49,7 @@ public class rentBean implements Serializable{
     @PostConstruct
     public void init(){
         rentDAO = new rentDAO();
-        rentEntitys = new rentEntitys();  
+        rentEntitys = new rentEntitys();
         CountsHowManyRents();
         all();
         revenuesTotal();
@@ -84,6 +91,8 @@ public class rentBean implements Serializable{
         
         addMessage("Aluguel adicionado com sucesso!");
         
+        all();
+        updateComponent("form");
         rentEntitys = new rentEntitys();
     }
     /*
@@ -93,6 +102,7 @@ public class rentBean implements Serializable{
     public void CountsHowManyRents(){
         try {
             rentEntitys = rentDAO.CountsHowManyRents();
+            setTotal(rentEntitys.getTotal());
         } catch (Exception ex) {
             addMessage(ex.getMessage());
         }
@@ -112,8 +122,7 @@ public class rentBean implements Serializable{
         try {
             carEntitys carEntitys = new carEntitys();
             totalCost = (rentEntitys.getValuePaid()*30)/100;
-            totalProfit = rentEntitys.getValuePaid() - ((680*30)/100);
-            goals = 2;
+            totalProfit = rentEntitys.getValuePaid() - ((rentEntitys.getValuePaid()*30)/100);
         } catch (Exception ex) {
             addMessage(ex.getMessage());
         }
@@ -186,5 +195,29 @@ public class rentBean implements Serializable{
     }
     public void setGoals(int goals) {
         this.goals = goals;
+    }
+    public clientEntitys getClientEntitys() {
+        return clientEntitys;
+    }
+    public void setClientEntitys(clientEntitys clientEntitys) {
+        this.clientEntitys = clientEntitys;
+    }
+    public carEntitys getCarEntitys() {
+        return carEntitys;
+    }
+    public void setCarEntitys(carEntitys carEntitys) {
+        this.carEntitys = carEntitys;
+    }
+    public userEntitys getUserEntitys() {
+        return userEntitys;
+    }
+    public void setUserEntitys(userEntitys userEntitys) {
+        this.userEntitys = userEntitys;
+    }
+    public int getTotal() {
+        return total;
+    }
+    public void setTotal(int total) {
+        this.total = total;
     }
 }

@@ -16,9 +16,9 @@ public class rentEntitys extends baseEntitys{
     private boolean status;
     private String description;
     private double valuePaid;
-    private carEntitys carFK;
-    private clientEntitys clientFK;
-    private userEntitys userFK;
+    private String placa;
+    private String cpf;
+    private String user;
     private int total;
 
     // Getters and Setters
@@ -52,24 +52,24 @@ public class rentEntitys extends baseEntitys{
     public void setValuePaid(double valuePaid) {
         this.valuePaid = valuePaid;
     }
-    public carEntitys getCarFK() {
-        return carFK;
+    public String getPlaca() {
+        return placa;
     }
-    public void setCarFK(carEntitys carFK) {
-        this.carFK = carFK;
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
-    public clientEntitys getClientFK() {
-        return clientFK;
+    public String getCpf() {
+        return cpf;
     }
-    public void setClientFK(clientEntitys clientFK) {
-        this.clientFK = clientFK;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
-    public userEntitys getUserFK() {
-        return userFK;
+    public String getUser() {
+        return user;
     }
-    public void setUserFK(userEntitys userFK) {
-        this.userFK = userFK;
-    }  
+    public void setUser(String user) {
+        this.user = user;
+    }
     public int getTotal() {
         return total;
     }

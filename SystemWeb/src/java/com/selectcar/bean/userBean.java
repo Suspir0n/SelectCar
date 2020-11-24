@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ViewScoped;
@@ -30,7 +31,7 @@ import org.primefaces.event.RowEditEvent;
  * @author Suspir0n
  */
 @ManagedBean(name = "userBean")
-@ViewScoped
+@SessionScoped
 public class userBean implements Serializable{
     
     // Attributes \\
@@ -111,15 +112,15 @@ public class userBean implements Serializable{
     */
     public void save(){
         try {
-            System.out.println(userEntitys);
             userDAO.save(userEntitys);
         } catch (Exception ex) {
             addMessage(ex.getMessage());
         }
-        
+        userEntitys = new userEntitys();
         addMessage("Usuario adicionado com sucesso!");
         
-        userEntitys = new userEntitys();
+        all();
+        updateComponent("form");
     }
     /*
     * Method Count
@@ -144,34 +145,17 @@ public class userBean implements Serializable{
             return;
         }
         addMessage("Usuario removido com sucesso!");
-        
         all();
-        updateComponent("form"); // atualizo o form, para dar um refresh no datatable
+        updateComponent("form");
     }
-    public void onRowEdit(RowEditEvent event){ // invocado ao editar um registro
-        userEntitys registroEditado = (userEntitys) event.getObject();
-        try {
-            userDAO.save(registroEditado);
-        } catch (Exception e) {
-            addMessage(e.getMessage());
-            return;
-        }
-        addMessage("Quantidade de compras alterada com sucesso!");
-    }
-    
-    public void onRowCancel(RowEditEvent event){ // invocado ao cancelar a edição de um registro
-        addMessage("Edição cancelada!");
-    }
-    public void updateComponent(String id){
-         RequestContext.getCurrentInstance().update(id);
-    }
-    
-    public void addMessage(String msg){
+     public void addMessage(String msg){
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO,msg,null);
         FacesContext.getCurrentInstance().addMessage(null, message);
         updateComponent("msg"); // atualiza o componente de mensagens 
     }
-    
+    public void updateComponent(String id){
+         RequestContext.getCurrentInstance().update(id);
+    }
     // Getters and Setters \\
     public userDAO getUserDAO() {
         return userDAO;

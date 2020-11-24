@@ -21,12 +21,14 @@
     </h:head>
     <h:body>
         <div class="container">
+
             <div class="container-sign-in">
                 <div class="wrap-sign-in">
                     <div class="sign-in-pic">
                         <img src="resources/image/logo.svg" alt="IMG"/>
                     </div>
-                    <h:form class="form-sign-in">
+                    <h:form class="form-sign-in" id="form">
+                        <p:growl id="msg" showDetail="true" sticky="true" />
                         <span class="form-title">
                             Acesse sua conta
                         </span>

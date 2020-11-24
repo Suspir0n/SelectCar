@@ -11,18 +11,21 @@ import static com.sun.javafx.logging.PulseLogger.addMessage;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import org.primefaces.context.RequestContext;
+import org.primefaces.event.RowEditEvent;
 
 /**
  *
  * @author Suspir0n
  */
-@Named(value = "clientBean")
-@SessionScoped
+@ManagedBean(name = "clientBean")
+@RequestScoped
 public class clientBean implements Serializable{
     
      // Attributes \\
@@ -73,6 +76,7 @@ public class clientBean implements Serializable{
     */
     public void save(){
         try {
+            System.out.println(clientEntitys);
             clientDAO.save(clientEntitys);
         } catch (Exception ex) {
             addMessage(ex.getMessage());
@@ -80,6 +84,8 @@ public class clientBean implements Serializable{
         
         addMessage("Cliente adicionado com sucesso!");
         
+        all();
+        updateComponent("form");
         clientEntitys = new clientEntitys();
     }
     /*

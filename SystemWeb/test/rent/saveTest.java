@@ -6,10 +6,7 @@
 package rent;
 
 import com.selectcar.DAO.rentDAO;
-import com.selectcar.entitys.carEntitys;
-import com.selectcar.entitys.clientEntitys;
 import com.selectcar.entitys.rentEntitys;
-import com.selectcar.entitys.userEntitys;
 import static junit.framework.Assert.fail;
 import org.junit.Test;
 
@@ -26,24 +23,18 @@ public class saveTest {
     public void save() throws Exception {
         System.out.println("save");
         rentDAO instance = new rentDAO();
-        clientEntitys cpfClient = new clientEntitys();
-        carEntitys placaCar = new carEntitys();
-        userEntitys nameUser = new userEntitys();
 
         try {
             rentEntitys rent = new rentEntitys();
-            rent.setUid(3);
-            rent.setDateRented("2020-10-21");
-            rent.setDateDelivery("2020-10-24");
+            rent.setUid(7);
+            rent.setDateRented("2020-11-24");
+            rent.setDateDelivery("2020-10-11");
             rent.setStatus(false);
             rent.setDescription("Veiculo entregue com uma otima condição, em otimo estado, com o tanque cheio");
-            rent.setValuePaid(430.00);
-            cpfClient.setCpf("999.999.999-99");
-            rent.setClientFK(cpfClient);
-            placaCar.setPlaca("bcd-8965");
-            rent.setCarFK(placaCar);
-            nameUser.setName("Evandro");
-            rent.setUserFK(nameUser);
+            rent.setValuePaid(1500.00);
+            rent.setCpf("999.888.777-68");
+            rent.setPlaca("teste");
+            rent.setUser("Evandro");
             instance.save(rent);
             if (rent == null) {
                 fail("result null !");

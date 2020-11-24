@@ -28,7 +28,7 @@ public class saveTest {
             carEntitys car = new carEntitys();
             car.setUid(2);
             car.setNumberChassi("26T Asw47N eD Cb6990");
-            car.setPlaca("BCW-9462");
+            car.setPlaca("BCW-9461");
             car.setMark("Nissan");
             car.setModel("Altima GXE 2.4 16V");
             car.setPorts(4);

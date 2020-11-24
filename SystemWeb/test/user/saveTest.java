@@ -26,12 +26,12 @@ public class saveTest {
 
         try {
             userEntitys user = new userEntitys();
-            user.setUid(3);
+            user.setUid(1);
             user.setName("Evandro");
             user.setOffice("Desenvolvedor");
             user.setLogin("Evandro");
             user.setEmail("evandro@gmail.com");
-            user.setPassword("1532156");
+            user.setPassword("123456");
             user.setPhoto("photo");
             instance.save(user);
             if (user == null) {

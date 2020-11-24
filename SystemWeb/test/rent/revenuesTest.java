@@ -27,7 +27,7 @@ public class revenuesTest {
         rentDAO instance = new rentDAO();
 
         try {
-            System.out.println(instance.revenues());
+            //System.out.println(instance.revenues());
             
             if (rent == null) {
                 fail("result null !");

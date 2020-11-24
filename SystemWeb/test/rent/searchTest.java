@@ -40,9 +40,9 @@ public class searchTest {
             System.out.println("status: " + rent.getStatus());
             System.out.println("description: " + rent.getDescription());
             System.out.println("valuePay: " + rent.getValuePaid());
-            System.out.println("clientFK: " + rent.getClientFK().getCpf());
-            System.out.println("carFK: " + rent.getCarFK().getPlaca());
-            System.out.println("userFK: " + rent.getUserFK().getName());
+            System.out.println("clientFK: " + rent.getCpf());
+            System.out.println("carFK: " + rent.getPlaca());
+            System.out.println("userFK: " + rent.getUser());
         } catch (Exception e) {
             fail(e.getMessage());
         }
